@@ -199,14 +199,8 @@ void loop()
 
         if (incoming_universe >= 0 && incoming_universe < totalUniverses)
         {
-          memcpy(stripNr[incoming_universe], &packetBuffer[art_net_header_size], endChannel[incoming_universe]);
-          /*
-            for (int i = startChannel; i < endChannel[incoming_universe]; i = i + 3) {
-             stripNr[incoming_universe][i / 3] = CRGB(byte(packetBuffer[i + art_net_header_size + 1]), byte(packetBuffer[i + art_net_header_size + 2]), byte(packetBuffer[i + art_net_header_size + 3]));
-            }
-          */
+          memcpy(stripNr[incoming_universe], &packetBuffer[art_net_header_size +1], endChannel[incoming_universe]);
         }
-        //FastLED.show(); // show current pixels
       }
     } //end of sniffing
   }
