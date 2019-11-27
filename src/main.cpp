@@ -206,8 +206,11 @@ void loop()
             }
           */
         }
-        FastLED.show(); // show current pixels
+        //FastLED.show(); // show current pixels
       }
     } //end of sniffing
   }
+
+EVERY_N_MILLISECONDS(40) { FastLED.show(); }   //update rate of leds (25fps = 40ms, 30fps = 33.33ms, 45fps = 22.22ms)
+
 }
